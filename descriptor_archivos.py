@@ -6,10 +6,10 @@ Created on Thu Sep 19 18:36:47 2019
 """
 arch=open("EMPLOYEES.txt","r")
 tupla=arch.read()
-i=0
-cont=0
-tem=''
-Nam_arch=''
+i = 0
+cont = 0
+tem = ''
+Nam_arch = ''
 Atri=''
 j=0
 aux = ''
@@ -88,9 +88,8 @@ def TEM_ARCH():
     arch.close()
     arch1=open('RESULT_PROY.csv','w')
     arch1.close()
-    
-def OPC_1():
 
+def OPC_1():
     print('#Resultado:')
     emp='EMPLOYEES'
     datos=pd.read_csv(emp+'.csv')
@@ -102,8 +101,8 @@ def OPC_1():
     df.to_csv('RESULT_SELECT.csv',header=True,index=False)
     df1.to_csv('RESULT_PROY.csv',header=True,index=False)
     input()
-    
-#OPC_1()    
+
+#OPC_1()
 def MENU():
     OPC=1
     while OPC !=0:
@@ -121,5 +120,3 @@ def MENU():
             os.remove('EMPLOYEES.csv')
             os.system("cls")
 MENU()
-                
-    

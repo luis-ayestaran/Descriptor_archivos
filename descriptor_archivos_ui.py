@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# - * - coding: utf - 8 -* -
 
 # Form implementation generated from reading ui file 'descriptor_archivos.ui'
 #
@@ -8,7 +8,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import pandas as pd
+import os
+import sys
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -19,35 +21,35 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         MainWindow.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("7MO SEMESTRE/BASES DE DATOS/PROYECTO/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("7MO SEMESTRE / BASES DE DATOS / PROYECTO / icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
-        MainWindow.setStyleSheet("* {\n"
-"    background-color: #333;\n"
+        MainWindow.setStyleSheet(" * {\n"
+"    background - color: #333;\n"
 "}\n"
 "\n"
 "QLabel {\n"
-"    font-family: \"HelveticaNeueLT Pro 55 Roman\";\n"
-"    font-size: 20px;\n"
-"    font-weight: bold;\n"
+"    font - family: \"HelveticaNeueLT Pro 55 Roman\";\n"
+"    font - size: 20px;\n"
+"    font - weight: bold;\n"
 "    color: white;\n"
-"    qproperty-alignment: AlignCenter;\n"
+"    qproperty - alignment: AlignCenter;\n"
 "}\n"
 "\n"
 "QPushButton {\n"
-"    font-family: \"HelveticaNeueLT Pro 55 Roman\";\n"
-"    font-weight: bold;\n"
-"    font-size: 20px;\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
+"    font - family: \"HelveticaNeueLT Pro 55 Roman\";\n"
+"    font - weight: bold;\n"
+"    font - size: 20px;\n"
+"    background - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
 "    color: black;\n"
 " }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
+"    background - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
 "    color: black;\n"
 "}\n"
 "\n"
 " QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1 #20e1a7 );\n"
+"    background - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1 #20e1a7 );\n"
 " }")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -55,14 +57,14 @@ class Ui_MainWindow(object):
         self.btnDoQuery.setGeometry(QtCore.QRect(70, 410, 200, 40))
         font = QtGui.QFont()
         font.setFamily("HelveticaNeueLT Pro 55 Roman")
-        font.setPointSize(-1)
+        font.setPointSize( - 1)
         font.setBold(True)
         font.setWeight(75)
         self.btnDoQuery.setFont(font)
         self.btnDoQuery.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnDoQuery.setToolTip("")
         self.btnDoQuery.setStyleSheet("QPushButton {\n"
-"    border-radius: 20px;\n"
+"    border - radius: 20px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -73,8 +75,8 @@ class Ui_MainWindow(object):
         self.btnDoQuery.setObjectName("btnDoQuery")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(20, 60, 301, 261))
-        self.frame.setStyleSheet("background-color: #444;\n"
-"border-radius: 20px;")
+        self.frame.setStyleSheet("background - color: #444;\n"
+"border - radius: 20px;")
         self.frame.setFrameShape(QtWidgets.QFrame.Panel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setLineWidth(5)
@@ -84,74 +86,74 @@ class Ui_MainWindow(object):
         self.lblQueryContent.setGeometry(QtCore.QRect(20, 20, 271, 51))
         font = QtGui.QFont()
         font.setFamily("SF Pro Display")
-        font.setPointSize(-1)
+        font.setPointSize( - 1)
         font.setBold(False)
         font.setWeight(50)
         self.lblQueryContent.setFont(font)
-        self.lblQueryContent.setStyleSheet("font-family: \"SF Pro Display\";\n"
-"font-size: 13px;\n"
-"font-weight: normal;\n"
+        self.lblQueryContent.setStyleSheet("font - family: \"SF Pro Display\";\n"
+"font - size: 13px;\n"
+"font - weight: normal;\n"
 "color: #eee;\n"
-"qproperty-alignment: AlignLeft;")
+"qproperty - alignment: AlignLeft;")
         self.lblQueryContent.setObjectName("lblQueryContent")
         self.lblQueryTitle = QtWidgets.QLabel(self.centralwidget)
         self.lblQueryTitle.setGeometry(QtCore.QRect(20, 20, 61, 31))
         font = QtGui.QFont()
         font.setFamily("HelveticaNeueLT Pro 55 Roman")
-        font.setPointSize(-1)
+        font.setPointSize( - 1)
         font.setBold(True)
         font.setWeight(75)
         self.lblQueryTitle.setFont(font)
-        self.lblQueryTitle.setStyleSheet("font-family: \"HelveticaNeueLT Pro 55 Roman\";\n"
-"font-size: 20px;\n"
-"font-weight: bold;\n"
+        self.lblQueryTitle.setStyleSheet("font - family: \"HelveticaNeueLT Pro 55 Roman\";\n"
+"font - size: 20px;\n"
+"font - weight: bold;\n"
 "color: white;\n"
-"qproperty-alignment: AlignCenter;")
+"qproperty - alignment: AlignCenter;")
         self.lblQueryTitle.setObjectName("lblQueryTitle")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setEnabled(True)
         self.textEdit.setGeometry(QtCore.QRect(350, 60, 921, 571))
         font = QtGui.QFont()
         font.setFamily("SF Pro Display")
-        font.setPointSize(-1)
+        font.setPointSize( - 1)
         self.textEdit.setFont(font)
-        self.textEdit.setStyleSheet("background-color: #666;\n"
-"border-radius: 20px;\n"
+        self.textEdit.setStyleSheet("background - color: #666;\n"
+"border - radius: 20px;\n"
 "padding: 10px;\n"
 "color: #eee;\n"
-"font-family: \"SF Pro Display\";\n"
-"font-size: 16px;")
+"font - family: \"SF Pro Display\";\n"
+"font - size: 16px;")
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
         self.lblResults = QtWidgets.QLabel(self.centralwidget)
         self.lblResults.setGeometry(QtCore.QRect(350, 30, 111, 16))
-        self.lblResults.setStyleSheet("font-family: \"HelveticaNeueLT Pro 55 Roman\";\n"
-"font-size: 20px;\n"
-"font-weight: bold;\n"
+        self.lblResults.setStyleSheet("font - family: \"HelveticaNeueLT Pro 55 Roman\";\n"
+"font - size: 20px;\n"
+"font - weight: bold;\n"
 "color: white;\n"
-"qproperty-alignment: AlignCenter;")
+"qproperty - alignment: AlignCenter;")
         self.lblResults.setObjectName("lblResults")
         self.btnSelectQuery = QtWidgets.QPushButton(self.centralwidget)
         self.btnSelectQuery.setGeometry(QtCore.QRect(120, 350, 100, 40))
         self.btnSelectQuery.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnSelectQuery.setStyleSheet("QPushButton {\n"
-"    border-radius: 20px;\n"
-"    border-style: solid;\n"
-"    border-width: 1px;\n"
-"    border-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1     #20e1a7 );    \n"
+"    border - radius: 20px;\n"
+"    border - style: solid;\n"
+"    border - width: 1px;\n"
+"    border - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1     #20e1a7 );    \n"
 "    color:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1         #20e1a7 ); \n"
-"    background-color: transparent;\n"
-"    font-size: 18px;\n"
+"    background - color: transparent;\n"
+"    font - size: 18px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
+"    background - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #20e1a7, stop: 1  #08beb2);    \n"
 "    color: black;\n"
 "}\n"
 "\n"
 " QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1 #20e1a7 );\n"
-"    border-radius: 20px;\n"
+"    background - color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #08beb2, stop: 1 #20e1a7 );\n"
+"    border - radius: 20px;\n"
 " }")
         self.btnSelectQuery.setObjectName("btnSelectQuery")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -174,18 +176,88 @@ class Ui_MainWindow(object):
 "FROM EMPLOYEES\n"
 "WHERE salary BETWEEN 10000 AND 15000;"))
         self.lblQueryTitle.setText(_translate("MainWindow", "Query"))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SF Pro Display\'; font-size:16px; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:8.25pt;\"><br /></p></body></html>"))
-        self.textEdit.setPlaceholderText(_translate("MainWindow", "Aquí irán apareciendo los resultados. Vamos, ¡realiza una query!"))
+        self.textEdit.setHtml(_translate("MainWindow", " < !DOCTYPE HTML PUBLIC \" - / / W3C // DTD HTML 4.0 // EN\" \"http: // www.w3.org / TR / REC - html40 / strict.dtd\" > \n"
+" < html >< head >< meta name = \"qrichtext\" content = \"1\" / > < style type = \"text / css\" > \n"
+"p, li { white - space: pre - wrap; }\n"
+" </ style > < / head >< body style = \" font - family:\'SF Pro Display\'; font - size:16px; font - weight:400; font - style:normal;\" > \n"
+" < p style = \" - qt - paragraph - type:empty; margin - top:0px; margin - bottom:0px; margin - left:0px; margin - right:0px; - qt - block - indent:0; text - indent:0px; font - family:\'MS Shell Dlg 2\'; font - size:8.25pt;\" >< br / >< / p > < / body > < / html > "))
+        self.textEdit.setPlaceholderText(_translate("MainWindow", "Aqu irn apareciendo los resultados. Vamos, realiza una query!"))
         self.lblResults.setText(_translate("MainWindow", "Resultados"))
         self.btnSelectQuery.setText(_translate("MainWindow", "SELECT"))
 
+def seleccionTuplaTodas(listaTupla, atributo, caracteristicaAtributo):
+    registros = atributo
+    listaPosicionAtributo = []
+    for
+
+    input(caracteristicaAtributo)
+    longitudListaTupla = len(listaTupla)
+    for x in range(1, longitudListaTupla):
+        posicion = listaTupla[x].find('[a-z]')
+        print(posicion)
+        input(listaTupla[x])
+    return registros
+
+def TEM_ARCH():
+    arch = open('RESULT_SELECT.csv','w')
+    arch.close()
+    arch1 = open('RESULT_PROY.csv','w')
+    arch1.close()
+
+def OPC_1():
+    print('#Resultado:')
+    emp = 'EMPLOYEES'
+    datos = pd.read_csv(emp + '.csv')
+    datos2 = datos[(datos['SALARY'] >= 10000 )& (datos['SALARY'] <= 15000)]
+    print(datos2.reset_index().iloc[:,[2,8]])
+    df = pd.DataFrame(datos2)
+    df1 = pd.DataFrame(datos2.reset_index().iloc[:,[2,8]])
+    TEM_ARCH()
+    df.to_csv('RESULT_SELECT.csv',header = True,index = False)
+    df1.to_csv('RESULT_PROY.csv',header = True,index = False)
+    input()
+
+def MENU():
+    OPC = 1
+    while OPC != 0:
+        #os.system("cls")
+        print('\n\tMENU\n1.OPERACIN 1:\n\tSELECT FIRST_NAME,SALARY\n\tFROM EMPLOYEES\n\tWHERE SALARY BETWEEN 10000 AND 15000;')
+        print('0.SALIR\n')
+        OPC = int(input('Selecione una Opcion:'))
+        os.system("cls")
+        if OPC == 1:
+            OPC_1()
+        if OPC == 0:
+            TEM_ARCH()
+            os.remove('RESULT_SELECT.csv')
+            os.remove('RESULT_PROY.csv')
+            os.remove('EMPLOYEES.csv')
+            os.system("cls")
+
 
 if __name__ == "__main__":
-    import sys
+    arch = open("EMPLOYEES.txt","r") 
+    tupla = arch.read() # Todo el archivo lo guarda en una cadena
+    arch.close()
+    tuplas = tupla.split('\n') # Archivo convertido en una lista
+    atributoTabla = '' # Cadena que contiene los atributos de la tabla
+    i = tupla.find(',') + 1 # En esta posicion empieza el primer atributo de la tabla
+    nombreArchivo = tupla[:i-1] # Nombre de la tabla
+    listaAtributo = tuplas[0].split(',') # La primera linea la convierto en una lista
+    listaAtributo.remove('')
+    for x in range(1, len(listaAtributo), 3): # En una cadena se anaden todos los atributos a exepcion de su longitud
+        atributoTabla += listaAtributo[x]
+        atributoTabla += ','
+    atributoTabla += "\n"
+    registros = seleccionTuplaTodas(tuplas, atributoTabla, listaAtributo)
+    input(registros)
+
+    arch2 = open(nombreArchivo + '.csv','w')
+    arch2.write(atributoTabla)
+    arch2.close()
+    MENU()
+
+    
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
