@@ -185,7 +185,7 @@ class Ui_MainWindow(object):
         self.lblResults.setText(_translate("MainWindow", "Resultados"))
         self.btnSelectQuery.setText(_translate("MainWindow", "SELECT"))
 
-def seleccionTuplaTodas(listaTupla, atributo, caracteristicaAtributo):
+def converitTextoCsv(listaTupla, atributo, caracteristicaAtributo):
     registros = atributo
     atributoRango = listaTupla[0].split(',') 
     atributoRango.remove('')
@@ -269,7 +269,7 @@ if __name__ == "__main__":
         atributoTabla += listaAtributo[x]
         atributoTabla += ','
     atributoTabla += "\n"
-    registros = seleccionTuplaTodas(tuplas, atributoTabla, listaAtributo)
+    registros = converitTextoCsv(tuplas, atributoTabla, listaAtributo)
     arch2 = open(nombreArchivo + '.csv','w')
     arch2.write(registros)
     arch2.close()
