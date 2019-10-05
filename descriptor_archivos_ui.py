@@ -187,15 +187,22 @@ class Ui_MainWindow(object):
 
 def seleccionTuplaTodas(listaTupla, atributo, caracteristicaAtributo):
     registros = atributo
+    atributoRango = listaTupla[0].split(',') 
+    atributoRango.remove('')
+    posicionLista = 0
     listaPosicionAtributo = []
-    for
-
-    input(caracteristicaAtributo)
+    for x in range(2, len(atributoRango), 3): # Hace una lista con las posiciones donde se encuentran los atributos, el rango en el archivo
+        listaPosicionAtributo.append([])
+        listaPosicionAtributo[posicionLista].append(atributoRango[x])
+        listaPosicionAtributo[posicionLista].append(atributoRango[x + 1])
+        posicionLista = posicionLista + 1
     longitudListaTupla = len(listaTupla)
-    for x in range(1, longitudListaTupla):
-        posicion = listaTupla[x].find('[a-z]')
-        print(posicion)
-        input(listaTupla[x])
+    for x in range(1, longitudListaTupla): # Une todas las tuplas en una cadena para que sea enviada a un CSV
+        for rango in listaPosicionAtributo:
+            cadena = listaTupla[x][int(rango[0]):int(rango[1]) + 1]
+            registros += cadena.replace(' ', '')
+            registros += ","
+        registros += "\n"
     return registros
 
 def TEM_ARCH():
@@ -244,16 +251,14 @@ if __name__ == "__main__":
     i = tupla.find(',') + 1 # En esta posicion empieza el primer atributo de la tabla
     nombreArchivo = tupla[:i-1] # Nombre de la tabla
     listaAtributo = tuplas[0].split(',') # La primera linea la convierto en una lista
-    listaAtributo.remove('')
+    listaAtributo.remove('') 
     for x in range(1, len(listaAtributo), 3): # En una cadena se anaden todos los atributos a exepcion de su longitud
         atributoTabla += listaAtributo[x]
         atributoTabla += ','
     atributoTabla += "\n"
     registros = seleccionTuplaTodas(tuplas, atributoTabla, listaAtributo)
-    input(registros)
-
     arch2 = open(nombreArchivo + '.csv','w')
-    arch2.write(atributoTabla)
+    arch2.write(registros)
     arch2.close()
     MENU()
 

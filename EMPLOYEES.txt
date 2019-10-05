@@ -1,5 +1,5 @@
 EMPLOYEES,EMPLOYEE_ID,0,5,FIRST_NAME,6,25,LAST_NAME,26,50,EMAIL,51,75,PHONE_NUMBER,76,95,HIRE_DAT,96,103,JOB_ID,104,113,SALARY,114,124,COMMISSION_PCT,125,129,MANAGER_ID,130,135,DEPARTMENT_ID,136,139,
-   100              Steven                     King                    SKING        515.123.456717/06/87   AD_PRES      24000             90
+   100              Steven                     King                    SKING        515.123.456717/06/87   AD_PRES      24000       null  90
    101               Neena                  Kochhar                 NKOCHHAR        515.123.456821/09/89     AD_VP      17000        100  90
    102                 Lex                  De Haan                  LDEHAAN        515.123.456913/01/93     AD_VP      17000        100  90
    103           Alexander                   Hunold                  AHUNOLD        590.423.456703/01/90   IT_PROG       9000        102  60
