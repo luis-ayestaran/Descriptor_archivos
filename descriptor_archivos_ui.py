@@ -205,38 +205,51 @@ def seleccionTuplaTodas(listaTupla, atributo, caracteristicaAtributo):
         registros += "\n"
     return registros
 
-def TEM_ARCH():
-    arch = open('RESULT_SELECT.csv','w')
-    arch.close()
-    arch1 = open('RESULT_PROY.csv','w')
-    arch1.close()
-
 def OPC_1():
     print('#Resultado:')
     emp = 'EMPLOYEES'
-    datos = pd.read_csv(emp + '.csv')
-    datos2 = datos[(datos['SALARY'] >= 10000 )& (datos['SALARY'] <= 15000)]
+    datos = pd.read_csv(emp + '.csv ')
+    datos2 = datos[(datos['SALARY'] >= 10000 ) & (datos['SALARY'] <= 15000)]
     print(datos2.reset_index().iloc[:,[2,8]])
-    df = pd.DataFrame(datos2)
     df1 = pd.DataFrame(datos2.reset_index().iloc[:,[2,8]])
-    TEM_ARCH()
-    df.to_csv('RESULT_SELECT.csv',header = True,index = False)
     df1.to_csv('RESULT_PROY.csv',header = True,index = False)
+    input()
+
+def OPC_2():
+    emp = 'EMPLOYEES'
+    datos = pd.read_csv(emp + '.csv')
+    datos2 = datos.iloc[0:-1]
+    print(datos2)
+    df = pd.DataFrame(datos2)
+    df.to_csv('RESULT_SELECT.csv',header = True,index = False)
+    input()
+
+def OPC_3():
+    emp = 'EMPLOYEES'
+    datos = pd.read_csv(emp + '.csv')
+    datos2 = datos.iloc[:, [1, 4, 6]]
+    print(datos2)
+    df = pd.DataFrame(datos2)
+    df.to_csv('RESULT_SELECT2.csv',header = True,index = False)
     input()
 
 def MENU():
     OPC = 1
     while OPC != 0:
-        #os.system("cls")
-        print('\n\tMENU\n1.OPERACIN 1:\n\tSELECT FIRST_NAME,SALARY\n\tFROM EMPLOYEES\n\tWHERE SALARY BETWEEN 10000 AND 15000;')
+        os.system("cls")
+        print('\n\tMENU\n1.OPERACIN 1:\n\tSELECT FIRST_NAME,SALARY\n\tFROM EMPLOYEES\n\tWHERE SALARY BETWEEN 10000 AND 15000; \n2.- SELECT * FROM EMPLOYEES\n3.- SELECT FIRST_NAME, PHONE_NUMBER, JOB_ID FROM EMPLOYEES')
         print('0.SALIR\n')
         OPC = int(input('Selecione una Opcion:'))
         os.system("cls")
         if OPC == 1:
             OPC_1()
+        elif OPC == 2:
+            OPC_2()
+        elif OPC == 3:
+            OPC_3()
         if OPC == 0:
-            TEM_ARCH()
             os.remove('RESULT_SELECT.csv')
+            os.remove('RESULT_SELECT2.csv')
             os.remove('RESULT_PROY.csv')
             os.remove('EMPLOYEES.csv')
             os.system("cls")
@@ -260,9 +273,7 @@ if __name__ == "__main__":
     arch2 = open(nombreArchivo + '.csv','w')
     arch2.write(registros)
     arch2.close()
-    MENU()
-
-    
+    MENU()    
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
