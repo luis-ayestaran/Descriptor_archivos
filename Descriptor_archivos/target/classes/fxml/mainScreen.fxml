@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane id="background" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sgbd.views.controllers.MainScreenController">
+   <children>
+      <BorderPane>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="875.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane>
+                                 <top>
+                                    <HBox id="details-pane" styleClass="hbox" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label id="details" text="Resultados" />
+                                       </children>
+                                    </HBox>
+                                 </top>
+                                 <center>
+                                    <TextArea id="results" fx:id="txtResults" promptText="Aquí irán apareciendo tus resultados. Vamos, ¡realiza una query!" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </StackPane>
+                     </center>
+                     <left>
+                        <StackPane prefHeight="620.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane>
+                                 <top>
+                                    <HBox id="details-pane" styleClass="hbox" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label id="details" text="Query" />
+                                       </children>
+                                    </HBox>
+                                 </top>
+                                 <center>
+                                    <BorderPane BorderPane.alignment="CENTER">
+                                       <center>
+                                          <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <TextArea fx:id="txtOperation" editable="false" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="15.0" />
+                                             </padding>
+                                          </StackPane>
+                                       </center>
+                                       <bottom>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vbox" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXButton buttonType="RAISED" onAction="#select" text="SELECT" />
+                                                <JFXButton opacity="0.0" text="FROM" />
+                                                <JFXButton opacity="0.0" text="WHERE" />
+                                                <JFXButton buttonType="RAISED" opacity="0.0" text="Realizar consulta" />
+                                             </children>
+                                          </VBox>
+                                       </bottom>
+                                    </BorderPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets right="20.0" />
+                           </BorderPane.margin>
+                        </StackPane>
+                     </left>
+                  </BorderPane>
+               </center>
+               <top>
+                  <StackPane BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane />
+                     </children>
+                  </StackPane>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@../stylesheets/mainScreen.css" />
+      <URL value="@../stylesheets/fonts.css" />
+   </stylesheets>
+</StackPane>

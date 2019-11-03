@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane id="background" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sgbd.views.controllers.MainScreenController">
+   <children>
+      <BorderPane>
+         <top>
+            <VBox id="title-pane" styleClass="vbox" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="title" text="Descriptor de archivos" />
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <StackPane BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane id="printed">
+                                 <bottom>
+                                    <TextArea fx:id="txtOperation" editable="false" maxHeight="200.0" prefHeight="190.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <center>
+                                    <HBox id="details-pane" styleClass="hbox" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label id="details" text="Operación" />
+                                       </children>
+                                    </HBox>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </StackPane>
+                     </top>
+                     <center>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="875.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane id="printed">
+                                 <bottom>
+                                    <TextArea fx:id="txtResults" editable="false" maxHeight="200.0" prefHeight="190.0" prefWidth="970.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <center>
+                                    <HBox id="details-pane" prefHeight="74.0" prefWidth="970.0" styleClass="hbox" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label id="details" text="Resultados" />
+                                       </children>
+                                    </HBox>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </StackPane>
+                     </center>
+                  </BorderPane>
+               </center>
+               <top>
+                  <StackPane BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane>
+                           <top>
+                              <StackPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox id="instructions" styleClass="hbox">
+                                       <children>
+                                          <Label text="Selecciona una opción." />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </StackPane>
+                           </top>
+                           <center>
+                              <StackPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <GridPane id="buttons">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <HBox id="button-pane" prefHeight="100.0" prefWidth="200.0" styleClass="vbox" GridPane.columnIndex="3">
+                                             <children>
+                                                <JFXButton buttonType="RAISED" onAction="#select" text="SELECT" />
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <JFXTextField labelFloat="true" promptText="Tabla" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="25.0" layoutY="10.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <JFXTextField labelFloat="true" promptText="Columna" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </StackPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </StackPane>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@../stylesheets/mainScreen.css" />
+      <URL value="@../stylesheets/fonts.css" />
+   </stylesheets>
+</StackPane>
